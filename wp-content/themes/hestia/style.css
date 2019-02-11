@@ -2,6 +2,16 @@
   width: 100% !important;
   margin: 0px !important;
 }
+.my_footer {
+  display: none !important:;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0px 30px 0px;
+}
+.my_footer {
+  margin-right: 14px;
+}
 
 
 @charset "UTF-8";
