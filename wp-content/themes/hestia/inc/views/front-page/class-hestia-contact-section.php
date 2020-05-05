@@ -33,9 +33,12 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 	 * TODO: Remove this in the next version after the release on wp.org
 	 */
 	public function contact_form_legacy() {
+		if ( ! defined( 'PIRATE_FORMS_VERSION' ) ) {
+			return false;
+		}
 		$execute = get_option( 'hestia_contact_form_legacy' );
 		if ( $execute !== false ) {
-			return;
+			return false;
 		}
 		$contact_shorcode_with_default    = get_theme_mod( 'hestia_contact_form_shortcode', '[pirate_forms]' );
 		$contact_shorcode_without_default = get_theme_mod( 'hestia_contact_form_shortcode' );
@@ -44,6 +47,7 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 		}
 
 		update_option( 'hestia_contact_form_legacy', true );
+		return true;
 	}
 
 	/**
@@ -96,11 +100,25 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 		}
 		$section_style = 'style="' . $section_style . '"';
 
+		$contact_content_default = '';
+		if ( current_user_can( 'edit_theme_options' ) ) {
+			$contact_content_default = $this->content_default();
+		}
+
+		$hestia_contact_content = get_theme_mod( 'hestia_contact_content_new', wp_kses_post( $contact_content_default ) );
+
 		/**
 		 * In case this function is called as shortcode, we remove the container and we add 'is-shortcode' class.
 		 */
 		$class_to_add  = $is_shortcode === true ? 'is-shortcode' : '';
 		$class_to_add .= ! empty( $hestia_contact_background ) ? 'section-image' : '';
+
+		$html_allowed_strings = array(
+			$hestia_contact_title,
+			$hestia_contact_subtitle,
+			$hestia_contact_content,
+		);
+		maybe_trigger_fa_loading( $html_allowed_strings );
 
 		hestia_before_contact_section_trigger(); ?>
 		<section class="hestia-contact contactus <?php echo esc_attr( $class_to_add ); ?>" id="contact"
@@ -126,12 +144,6 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 						<?php endif; ?>
 						<?php
 
-						$contact_content_default = '';
-						if ( current_user_can( 'edit_theme_options' ) ) {
-							$contact_content_default = $this->content_default();
-						}
-
-						$hestia_contact_content = get_theme_mod( 'hestia_contact_content_new', wp_kses_post( $contact_content_default ) );
 						if ( ! empty( $hestia_contact_content ) ) {
 							echo '<div class="hestia-description">';
 							echo wp_kses_post( force_balance_tags( $hestia_contact_content ) );
@@ -181,7 +193,7 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 	public function content_default() {
 		$html = '<div class="hestia-info info info-horizontal">
 			<div class="icon icon-primary">
-				<i class="fa fa-map-marker"></i>
+				<i class="fas fa-map-marker-alt"></i>
 			</div>
 			<div class="description">
 				<h4 class="info-title"> Find us at the office </h4>
@@ -190,7 +202,7 @@ class Hestia_Contact_Section extends Hestia_Abstract_Main {
 		</div>
 		<div class="hestia-info info info-horizontal">
 			<div class="icon icon-primary">
-				<i class="fa fa-mobile"></i>
+				<i class="fas fa-mobile-alt"></i>
 			</div>
 			<div class="description">
 				<h4 class="info-title">Give us a ring</h4>

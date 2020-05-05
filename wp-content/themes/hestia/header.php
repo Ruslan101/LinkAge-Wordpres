@@ -17,8 +17,8 @@ $disabled_frontpage   = get_theme_mod( 'disable_frontpage_sections', false );
 $wrapper_div_classes .=
 	(
 		( is_front_page() && ! is_page_template() && ! is_home() && false === (bool) $disabled_frontpage ) ||
-		( class_exists( 'WooCommerce' ) && ( is_product() || is_product_category() ) ) ||
-		( is_archive() && ( class_exists( 'WooCommerce' ) && ! is_shop() ) )
+		( class_exists( 'WooCommerce', false ) && ( is_product() || is_product_category() ) ) ||
+		( is_archive() && ( class_exists( 'WooCommerce', false ) && ! is_shop() ) )
 	) ? '' : ' ' . $layout . ' ';
 
 $header_class = '';
@@ -41,6 +41,7 @@ if ( (bool) $hide_top_bar === false ) {
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
 	<div class="<?php echo esc_attr( $wrapper_div_classes ); ?>">
 		<header class="header <?php echo esc_attr( $header_class ); ?>">
 			<?php

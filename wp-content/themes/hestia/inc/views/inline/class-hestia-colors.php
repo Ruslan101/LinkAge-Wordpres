@@ -50,8 +50,13 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.card-blog a.moretag:hover, 
 		.card-blog a.more-link:hover, 
 		.widget a:hover,
-		.has-accent-color {
+		.has-text-color.has-accent-color,
+		p.has-text-color a {
 		    color:' . esc_html( $color_accent ) . ';
+		}
+		
+		.svg-text-color{
+			fill:' . esc_html( $color_accent ) . ';
 		}
 		
 		.pagination span.current, .pagination span.current:focus, .pagination span.current:hover {
@@ -92,7 +97,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.label.label-primary,
 		.hestia-work .portfolio-item:nth-child(6n+1) .label,
 		.nav-cart .nav-cart-content .widget .buttons .button,
-		.has-accent-background-color {
+		.has-accent-background-color[class*="has-background"] {
 		    background-color: ' . esc_html( $color_accent ) . ';
 		}
 		
@@ -147,15 +152,15 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.everest-forms button[type=submit].everest-forms-submit-button:hover,
  		.everest-forms button[type=submit].everest-forms-submit-button:focus,
  		.everest-forms button[type=submit].everest-forms-submit-button:active {
-			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
+			-webkit-box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
 		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
 			color: #fff;
 		}
 		
 		.form-group.is-focused .form-control {
-		background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
-			background-image: -webkit-linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
-			background-image: linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: -webkit-linear-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: linear-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
 		}
 		
 		.navbar:not(.navbar-transparent) li:not(.btn):hover > a,
@@ -168,20 +173,24 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		' : '';
 
 		// Header Gradient Color + support for Gutenberg color.
-		$custom_css .= ! empty( $header_gradient ) ? '
-		.header-filter-gradient { 
-			background: linear-gradient(45deg, ' . hestia_hex_rgba( $header_gradient ) . ' 0%, ' . hestia_generate_gradient_color( $header_gradient ) . ' 100%); 
+		if ( ! empty( $header_gradient ) ) {
+			$gradient_angle = is_rtl() ? '-45deg' : '45deg';
+
+			$custom_css .= '
+			.header-filter-gradient { 
+				background: linear-gradient(' . $gradient_angle . ', ' . hestia_hex_rgba( $header_gradient ) . ' 0%, ' . hestia_generate_gradient_color( $header_gradient ) . ' 100%); 
+			}
+			.has-text-color.has-header-gradient-color { color: ' . $header_gradient . '; }
+			.has-header-gradient-background-color[class*="has-background"] { background-color: ' . $header_gradient . '; }
+			';
 		}
-		.has-header-gradient-color { color: ' . $header_gradient . '; }
-		.has-header-gradient-background-color { background-color: ' . $header_gradient . '; }
-		 ' : '';
 
 		// Gutenberg support for the background color
 		$background_color = '#' . get_theme_mod( 'background_color', 'E5E5E5' );
 
 		$custom_css .= '
-		.has-background-color-color { color: ' . $background_color . '; }
-		.has-background-color-background-color { background-color: ' . $background_color . '; }
+		.has-text-color.has-background-color-color { color: ' . $background_color . '; }
+		.has-background-color-background-color[class*="has-background"] { background-color: ' . $background_color . '; }
 		';
 
 		return $custom_css;
@@ -193,7 +202,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 	 * @return string
 	 */
 	private function woo_colors_inline_style() {
-		if ( ! class_exists( 'woocommerce' ) ) {
+		if ( ! class_exists( 'WooCommerce', false ) ) {
 			return '';
 		}
 
@@ -210,8 +219,8 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.woocommerce div.product form.cart .variations select:focus,
 		.woocommerce .woocommerce-ordering select:focus {
 			background-image: -webkit-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
-			background-image: -webkit-linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),-webkit-linear-gradient(#d2d2d2,#d2d2d2);
-			background-image: linear-gradient(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . '),linear-gradient(#d2d2d2,#d2d2d2);
+			background-image: -webkit-linear-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),-webkit-linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
+			background-image: linear-gradient(linear,left top, left bottom,from(' . esc_html( $color_accent ) . '),to(' . esc_html( $color_accent ) . ')),linear-gradient(linear,left top, left bottom,from(#d2d2d2),to(#d2d2d2));
 		}
 
 		.woocommerce div.product .woocommerce-tabs ul.tabs.wc-tabs li.active a {
@@ -337,7 +346,7 @@ class Hestia_Colors extends Hestia_Abstract_Main {
 		.woocommerce-button:hover,
 		.woocommerce-Button:hover,
 		div.woocommerce table.my_account_orders .button:hover {
-			-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
+			-webkit-box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
 		    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $color_accent, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $color_accent, '0.2' ) . ';
 			color: #fff;
 		}

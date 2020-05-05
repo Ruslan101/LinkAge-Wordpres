@@ -40,9 +40,11 @@ do_action( 'hestia_before_archive_content' );
 							the_post();
 							get_template_part( 'template-parts/content' );
 						endwhile;
+						do_action( 'hestia_before_pagination' );
 						the_posts_pagination();
+						do_action( 'hestia_after_pagination' );
 					else :
-						get_template_part( 'template-parts/content', 'none' );
+							get_template_part( 'template-parts/content', 'none' );
 					endif;
 					?>
 				</div>

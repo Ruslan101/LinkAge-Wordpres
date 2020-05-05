@@ -1,6 +1,6 @@
 === Hestia Pro ===
 Contributors: themeisle
-Tags: blog, custom-logo, portfolio, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: blog, custom-logo, portfolio, e-commerce, rtl-language-support, post-formats, grid-layout, one-column, two-columns, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, footer-widgets, left-sidebar, right-sidebar, wide-blocks
 Requires at least: 4.0
 Tested up to: 5.0
 Stable tag: 2.0.7
@@ -17,6 +17,192 @@ Hestia WordPress theme, Copyright 2018 Themeisle
 Hestia is distributed under the terms of the GNU GPLv2 or later
 
 == Changelog ==
+
+#### [Version 3.0.0](https://github.com/Codeinwp/hestia-pro/compare/v2.5.7...v3.0.0) (2020-04-28)
+
+- [Feat] [PRO] New Custom Layouts module
+- [Feat] [PRO] New options for Single Products ( Exclusive Products, Seamless Add to Cart )
+- [Feat] [PRO] New Payment Icons on the Cart page
+- [Feat] [PRO] New option for custom image style effects on the Shop page
+- [Feat] New layout control for the Shop Sidebar
+- [Feat] [PRO] New Off-Canvas Sidebar option for the Shop Page
+- [Feat] Option to enable/disable cross-sells products on the Cart page
+- [Feat] Moved Starter Sites remotely
+- [Fix] Code refactoring and improvements
+- [Fix] Load Font Awesome based on usage
+- [Fix] Upgrade default Font Awesome icons to FA 5
+- [Fix] Related products layout when using Elementor Pro Single Product template
+- [Fix] [PRO] Compatibility with Elementor Pro Header and Footer templates
+- [Fix] [PRO] Duplicated related product image in Elementor Pro templates
+- [Fix] Small tweaks to the White Label module
+- [Fix] Header Background color in the WP editor blocks
+- [Fix] Transparent logo on mobile
+- [Fix] Allow skipping cropping the transparent logo
+- [Fix] Slider icons position in RTL mode
+- [Fix] Display tags on product pages
+
+
+
+= 2.5.7 - 2020-04-01  = 
+
+* Add new post causes errors in WP 5.4
+
+
+= 2.5.6 - 2019-12-17  = 
+
+* [Fix] Logo positioning for the third navigation layout option and no widgets
+* [Fix] Sync between the image set as the featured image for the Frontpage and the image from the About section
+* [Fix] Customizer icons missing when Font Awesome was not loaded
+* [Fix] Compatibility with the Menu Icons plugin while the transparent menu is on
+
+
+= 2.5.5 - 2019-11-14  = 
+
+* [Feat] Dedicated logo option for the transparent header
+* [Fix] Subscribe form on the blog page
+* [Fix] Line separator compatibility with WP 5.3
+
+
+= 2.5.4 - 2019-10-21  = 
+
+* [Fix] Blog page Infinite Scroll compatibility with the Alternative layout
+* [Fix] Cover block text color not updating
+* [Fix][Hestia Pro] Shop page Infinite Scroll compatibility with widgets filtering
+* [Fix][Hestia Pro] Header layout selection for the Shop page
+* [Fix][Hestia Pro] Slider arrows position on RTL
+
+
+= 2.5.3 - 2019-09-13  = 
+
+* [Fix] Improved About page layout
+* [Fix] License validation mechanism for Starter Sites
+
+
+= 2.5.2 - 2019-09-12  = 
+
+* [Fix] Compatibility with Elementor Pro Menu Cart widget
+* [Fix] Mail and phone icons compatibility with FA5
+* [Fix] Primary menu icons spacing and alignment
+* [Fix] Uppercase submenu items back to Sentence case
+* [Fix] WooCommerce product gallery images not clickable on mobile
+* [Perf] Small performance fixes
+
+
+= 2.5.1 - 2019-08-13  = 
+
+* [Fix] - Header layout on the front page
+* [Fix] - Removed Hestia's custom integration with Gutenberg
+* [Fix] - Social menu icons compatibility with FA5
+
+
+= 2.5.0 - 2019-08-08  = 
+
+* Migrated to Font Awesome 5
+* Updated the Starter Sites library
+
+
+= 2.4.9 - 2019-08-01  = 
+
+* Allow copyright text to be changed in both Hestia and Hestia PRO
+* Allow HTML tags in the title and subtitle fields of the Portfolio section
+* Create a WPForms form as a default value for the Contact section
+* Updated the Google Fonts Library
+* Fixed header layout on the tags archive page
+* Fixed issue with accent color not affecting links in the front-end
+* Made sure the header image is translatable with WPML
+* Fixed sidebar layout metabox not appearing when WooCommerce was not installed
+
+
+= 2.4.8 - 2019-07-23  = 
+
+* Speed improvement update for the Hestia Default Demo
+* [Hestia PRO] Fixed licensing issue in the onboarding mechanism
+
+
+= 2.4.7 - 2019-07-22  = 
+
+* Fixed issue with Starter Sites not available in the pro packages
+
+
+= 2.4.6 - 2019-07-18  = 
+
+* New Customizer option to control the header area on single product pages
+* [Hestia PRO] New meta option to control the header area on individual single product pages
+* Fixed alignment issue between the author title and the author image on mobile devices
+* Fixed header layout issue on the category page being affected by the first article layout
+* Move two items per line instead of one in the Our Team section for a better spacing
+* Lower header area and font sizes on mobile for better usage of the space
+* Darken color for the labels on the Checkout page
+
+
+= 2.4.5 - 2019-05-27  = 
+
+* Fixed editor visual integration with the latest update of WordPress
+* Fixed duplicated comments area when using Elementor Pro templates
+
+
+= 2.4.4 - 2019-04-22  = 
+
+* Removed weird scroll on the blog page
+
+
+= 2.4.3 - 2019-04-22  = 
+
+* New logging mechanism to the onboarding module
+* Improved the whole routine for the content import in the onboarding module
+* Added new wp_body_open() function for WP 5.2
+* Fixed logo disappearing on scroll on the distraction-free checkout mode
+* Made blog text color darker when using the full content articles option
+* Fixed portfolio featured image not visible in Firefox in the lightbox
+* Fixed overlapping content on the blog page
+* Fixed incorrect title attribute for the primary menu
+* Fixed Shop page layout on the third header layout
+* Remove title appearing in the navigation cart in the latest update of WooCommerce
+
+
+= 2.4.2 - 2019-04-02  = 
+
+* Updated the Starter Sites library
+
+
+= 2.4.1 - 2019-03-29  = 
+
+* Compatibility with the Header, Footer & Blocks for Elementor plugin
+* New Agency Travel Demo Starter Site
+* Fixed issue with the color picker needing two clicks
+* Updated the Contact and Facebook community links
+* Updated tags list with the new tags
+* Fixed importing issues with the Starter Sites
+* Fixed White Label error appearing lower PHP versions
+* Fixed issue with contact form shortcode not being translation ready
+* Updated Starter Sites library images
+
+
+= 2.4.0 - 2019-03-21  = 
+
+* [Hestia Pro] New White Label module
+* Fixed issue with Big Title buttons shadow color
+* Fixed issue with Portfolio pop-up not opening in Microsoft Edge
+* Fixed issue with Blog options taking control over the custom post types archives pages
+* Fixed issue with invalid CSS inline style
+
+
+= 2.3.0 - 2019-03-01  = 
+
+* Fixed products categories layout on the Shop pane and Homepage
+* Fixed issue with the title attribute not escaping HTML tags in the primary menu
+* New Hestia Original starter site
+
+
+= 2.2.1 - 2019-02-12  = 
+
+* [Hestia PRO] Fixed issue with the [hestia_slider] shortcode not working
+* Fixed search results page layout when using the second header option
+* Replaced Google+ sharing option with an Email option
+* Fixed link for sharing on Twitter option
+* Fixed issue with color control updating only after two clicks
+
+
 = 2.2.0 - 2019-02-06  = 
 
 * NEW Hestia Specific Gutenberg blocks for Otter Blocks
@@ -974,107 +1160,46 @@ Hestia is distributed under the terms of the GNU GPLv2 or later
 
 = Images =
 
-* screenshot.png, CC0, https://mystock.themeisle.com/photo/mountain/
-* slider1.jpg, CC0, https://mystock.themeisle.com/photo/dam/
-* slider2.jpg, CC0, http://mystock.photos/teddy/
-* slider3.jpg, CC0, http://mystock.photos/new-york-cityscape/
-* 1.jpg, CC0, http://mystock.photos/girl/
-* 2.jpg, CC0, http://mystock.photos/growing-old-together/
-* 3.jpg, CC0, http://mystock.photos/winter-hat/
-* 4.jpg, CC0, http://mystock.photos/growing-old-together/
-* 5.jpg, CC0, http://mystock.photos/thinking-time/
-* 6.jpg, CC0, http://mystock.photos/growing-old-together/
-* 7.jpg, CC0, http://mystock.photos/mysterious-man-2/
-* about.jpg, CC0, http://mystock.photos/street-blur/
-* contact.jpg, CC0, http://mystock.photos/city/
-* img/parallax_1.jpg, CC0, https://pixabay.com/en/field-clouds-sky-agriculture-533541/
-* parallax_2.png, CC0, https://mystock.themeisle.com/photo/statue-of-liberty-3/
-* lavender-1506506, CC0, https://pixabay.com/en/lavender-flower-pots-beer-tent-set-1506506/
-* plant-763965_1920, CC0, https://pixabay.com/en/plant-green-sheet-nature-plants-763965/
-* cactus-close-up-plant-6936, CC0, https://www.pexels.com/photo/cactus-on-white-pot-with-stones-in-high-angle-photography-6936/
-* flower-951780_1920, CC0, https://pixabay.com/en/flower-flower-pot-pots-candle-951780/
-* succulent-2931486_1920, CC0, https://pixabay.com/en/succulent-cactus-plant-garden-2931486/
-* water-lily-1510707_1920, CC0, https://pixabay.com/en/water-lily-pink-aquatic-plant-1510707/
-* roses-1274039_1920, CC0, https://pixabay.com/en/roses-white-flower-nature-petals-1274039/
-* botanic-botanical-cacti-1048036, CC0, https://stocksnap.io/photo/BJNWHUUGLL
-* red-cactus, CC0, https://stocksnap.io/photo/04I1YE5EXV
-* plant-3077047_1920, CC0, https://pixabay.com/en/plant-nature-sheet-3077047/
-* plant-3077047, CC0, https://pixabay.com/en/plant-nature-sheet-3077047/
-* aromatic-basil-blur-615304, CC0, https://www.pexels.com/photo/selective-photography-of-green-leaf-plant-in-brown-pot-615304/
-* branch-camera-minolta-156144, CC0, https://www.pexels.com/photo/branch-camera-minolta-tree-156144/
-* flower-pot-flowerpot-flowers-6803, CC0, https://www.pexels.com/photo/flower-pot-flowerpot-flowers-plants-6803/
-* kitchen-1867663_1920, CC0, https://pixabay.com/en/kitchen-tap-sink-blur-faucet-1867663/
-* kitchen-1867663_1280, CC0, https://pixabay.com/en/kitchen-tap-sink-blur-faucet-1867663/
-* StockSnap_04I1YE5EXV, CC0, https://stocksnap.io/photo/04I1YE5EXV
-* window-593364, CC0, https://pixabay.com/en/window-potted-plant-plant-interior-593364/
-* model-2911330_1920, CC0, https://pixabay.com/en/model-businessman-corporate-2911330/
-* young-man-2939344_640, CC0, https://pixabay.com/en/young-man-blue-sky-thumbs-up-2939344/
-* pretty-2682798_640, CC0, https://pixabay.com/en/pretty-fresh-happy-female-young-2682798/
-* landscape-3779922_1920_3, CC0, https://pixabay.com/en/landscape-clouds-sky-trees-hills-3779922/
-* flowers, CC0, https://mystock.themeisle.com/photo/flowers/
-* adult-agriculture-backyard-planting-162637, CC0, https://pixabay.com/en/watering-watering-can-man-vietnam-1501209/
-* watering-791312_640 ,CC0, https://pixabay.com/en/watering-watering-can-plant-plants-791312/
-* apple-black-coffee-business-461064, CC0, https://pixabay.com/en/laptop-notebook-work-keyboard-2443734/
-* eating_place, CC0, https://mystock.themeisle.com/photo/eating-place/
-* table-869379_1920, CC0, https://pixabay.com/en/table-desk-notebook-potted-plant-869379/
-* bonsai-316573_1280, CC0, https://pixabay.com/en/bonsai-tree-green-plant-small-316573/
-* cactus-1842095_1920, CC0, https://pixabay.com/en/cactus-minimalism-plant-pot-white-1842095/
-* lavender-1507499_1920, CC0, https://pixabay.com/en/lavender-flowers-purple-flowers-1507499/
-* narrow-leaf-dracaena-2651391_1920, CC0, https://pixabay.com/en/narrow-leaf-dracaena-flower-plant-2651391/
-* poppy-63755_1920, CC0, https://pixabay.com/en/poppy-field-of-poppies-flower-63755/
-* StockSnap_BJNWHUUGLL, CC0, https://stocksnap.io/photo/BJNWHUUGLL
-* thing-2569683_1920, CC0, https://pixabay.com/en/thing-plants-bonsai-cactus-green-2569683/
-* plant-3414671_1920, CC0, https://pixabay.com/en/plant-cactus-green-cacti-nature-3414671/
-* collie-163997_1280.jpg, CC0, https://pixabay.com/en/collie-rough-collie-dog-pet-canine-163997/
-* man-1209494_1920.jpg, CC0, https://pixabay.com/en/man-male-adult-person-caucasian-1209494/
-* chihuahua-820087_1920.jpg, CC0, https://pixabay.com/en/chihuahua-puppy-pet-dog-animal-820087/
-* beard-1834429_1920.jpg, CC0, https://pixabay.com/en/beard-colorful-colourful-expression-1834429/
-* animal-beautiful-blonde-460305.jpg, CC0, https://pixabay.com/en/doberman-blonde-woman-friendship-2390596/
-* animal-close-up-ocean-68744.jpg, CC0, https://pixabay.com/en/loggerhead-turtle-sea-ocean-water-123402/
-* animal-chihuahua-cute-39317.jpg, CC0, https://pixabay.com/en/chihuahua-dog-puppy-cute-pet-624924/
-* adorable-animal-cat-236603.jpg, CC0, https://pixabay.com/en/cat-kitten-mieze-breed-cat-1803904/
-* adorable-animal-canine-134392.jpg, CC0, https://freestocks.org/photo/dog-riding-car/
-* art-capsules-close-up-47073.jpg, CC0, https://pixabay.com/en/nutrient-additives-medicine-pills-505124/
-* adult-ambulance-care-263210.jpg, CC0, https://pixabay.com/en/veterinarian-animal-doctor-vet-pet-809930/
-* biology-clinic-doctor-4154.jpg, CC0, https://pixabay.com/en/medic-hospital-laboratory-medical-563423/
-* background-business-clean-811101.jpg, CC0, https://pixabay.com/en/aisle-background-buy-clean-food-3105629/
-* adult-doctor-girl-355934.jpg, CC0, https://pixabay.com/en/nurse-stethoscope-medicine-2141808/
-* adult-attractive-beautiful-415829.jpg, CC0,  | https://pixabay.com/en/beauty-makeup-skin-care-2190682/
-* animals-cats-cute-45170.jpg (also used ins screenshot), CC0, https://pixabay.com/en/kittens-cat-cat-puppy-rush-555822/
-* adult-biology-chemical-356040.jph (also used in screenshot), CC0, https://pixabay.com/en/scientist-drugstore-microscope-2141259/
-* smile-1726471_1920.jpg, CC0, https://pixabay.com/en/smile-profile-face-male-portrait-1726471/
-* energy-2181904_1920.jpg, CC0, https://pixabay.com/en/energy-wind-energy-wind-power-2181904/
-* windrader-1048981_1920.jpg, CC0, https://pixabay.com/en/windr%C3%A4der-wind-power-wind-park-fog-1048981/
-* window-cleaner-104890.jpg, CC0, https://pixabay.com/en/window-cleaner-window-cleaning-104890/
-* computer-3365366_1920.jpg, CC0, https://pixabay.com/en/computer-adult-laptop-office-woman-3365366/
-* office-1574717_1920.jpg, CC0, https://pixabay.com/en/office-pen-calculator-computation-1574717/
-* office-space-1744803.jpg, CC0, https://pixabay.com/en/office-space-office-sunny-coworking-1744803/
-* computer-2157100.jpg, CC0, https://pixabay.com/en/computer-programmer-it-business-2157100/
-* model-2911332_1920.jpg, CC0, https://pixabay.com/en/model-businessman-corporate-2911332/
-* adult-1868750.jpg, CC0, https://pixabay.com/en/adult-bald-beard-corporate-1868750/
-* business-437020_1920.jpg, CC0, https://pixabay.com/en/business-notebook-business-people-437020/
-* cold-1284411_1920.jpg, CC0, https://pixabay.com/en/cold-snow-nature-fashion-hands-1284411/
-* abstract-aluminum-210158.jpg, CC0, https://pixabay.com/en/basel-switzerland-tram-architecture-1722831/
-* alternative-alternative-energy-clouds-433308.jpg, CC0, https://pixabay.com/en/energy-renewable-energy-solar-energy-2302001/
-* alternative-alternative-energy-collector-159243.jpg, CC0, https://pixabay.com/en/solar-solar-cells-photovoltaic-1476224/
-* close-up-energy-low-angle-shot-68674.jpg, CC0, https://pixabay.com/en/windmill-wind-wind-turbine-electric-62257/
-* alternative-energy-environment-power-356060.jpg, CC0, https://pixabay.com/en/environmental-technology-current-1837636/
-* afterglow-alternative-energy-clouds-532192.jpg, CC0, https://pixabay.com/en/sunset-sunrise-sun-water-afterglow-2469106/
-* alternative-alternative-energy-collector-159243.jpg, CC0, https://pixabay.com/en/solar-solar-cells-photovoltaic-1476224/
-* adult-beautiful-casual-372042.jpg, CC0, https://pixabay.com/en/emotions-girl-hair-model-beauty-2166221/
-* adult-agreement-beard-573565.jpg, CC0, https://pixabay.com/en/business-deal-smile-cheerful-2703167/
-* adult-chill-computer-450271.jpg, CC0, https://pixabay.com/en/adult-break-business-caucasian-2449725/
-* alternative-alternative-energy-clean-356049.jpg, CC0, https://pixabay.com/en/photovoltaic-photovoltaic-system-2138994/
-* alternative-alternative-energy-blades-691458.jpg, CC0, http://snapwiresnaps.tumblr.com/post/167509411781/logan-edmark-free-under-cc0-10-download
-* alternative-alternative-energy-clean-159397.jpg, CC0, https://pixabay.com/en/solar-panel-array-power-sun-1591350/
-* alternative-alternative-energy-blue-411592.jpg (also used in screenshot), CC0, https://pixabay.com/en/solar-energy-solar-system-2157212/
-* cruise-1578528.jpg (used in Travel Agency Demo screenshot), CC0, https://pixabay.com/en/cruise-ship-cruiser-cruise-ship-1578528/
-* people-2594770_960_720.jpg (used in Coffee Shop Demo screenshot), CC0, https://pixabay.com/en/people-woman-girl-bar-coffee-2594770/
-* aroma-aromatic-art-434213, CC0, https://www.pexels.com/photo/aroma-aromatic-art-artistic-434213/
-* blur-burger-close-up-460599.jpg, CC0, https://www.pexels.com/photo/blur-burger-close-up-fastfood-460599/
-* alcohol-aperol-bar-128242, CC0, https://pixabay.com/en/cocktail-aperol-spritz-1542495/
-* IMG_6455.jpg (used in Lawyers Demo), CC0, https://mystock.themeisle.com/photo/liberty-in-shadow/
-* hestia_gym-slide1.jpg, CC0, https://pixabay.com/en/sport-fitness-training-sporty-2262083/
-* metal snowflake, CC0, https://mystock.themeisle.com/photo/metal-snowflake/
-* window, CC0, https://mystock.themeisle.com/photo/window/
-* red umbrellas, CC0, https://mystock.themeisle.com/photo/red-umbrellas/
+
+* Hestia: 1.jpg, CC0, https://mystock.themeisle.com/photo/girl/
+* Hestia: 2.jpg, CC0, https://mystock.themeisle.com/photo/winter-hat/
+
+* Hestia Default: tropical-beach, CC0, https://mystock.themeisle.com/photo/tropical-beach/
+
+
+All images are licensed under CC0.
+
+Screenshot resources:
+
+* https://mystock.themeisle.com/photo/mountain/
+
+Starter Sites screenshots resources:
+
+WooCommerce
+
+* https://mystock.themeisle.com/photo/sunflower/
+* https://mystock.themeisle.com/photo/flower/
+* https://mystock.themeisle.com/photo/blooming-bougainvillea-flowers/
+* https://mystock.themeisle.com/photo/flower-buds/
+* https://mystock.themeisle.com/photo/rock-flowers/
+* https://mystock.themeisle.com/photo/mountain-flowers/
+* http://mystock.themeisle.com/photo/lilac/
+
+Energy Panels
+
+* https://stocksnap.io/photo/J5Z48RFO76
+* https://stocksnap.io/photo/QEUHCFGQNP
+* https://stocksnap.io/photo/WVKCUPH3RC
+* https://stocksnap.io/photo/KAUFJW1PEQ
+
+Vet Center
+
+* https://stocksnap.io/photo/GSBJXWRSDV
+
+Agency Travel
+
+* https://mystock.themeisle.com/photo/amsterdam/
+
+Lawyers
+
+* https://mystock.themeisle.com/photo/liberty-in-shadow/

@@ -42,7 +42,7 @@ class Hestia_Metabox_Manager {
 			'hestia-page-settings',
 			$metabox_label,
 			array( $this, 'render_metabox' ),
-			array( 'post', 'page', 'jetpack-portfolio' ),
+			apply_filters( 'hestia_metabox_post_types', array( 'post', 'page', 'jetpack-portfolio' ) ),
 			'side',
 			'low'
 		);
@@ -73,7 +73,7 @@ class Hestia_Metabox_Manager {
 			get_option( 'woocommerce_terms_page_id' ),
 		);
 
-		if ( in_array( $post->ID, $restricted_pages_id ) ) {
+		if ( in_array( $post->ID, $restricted_pages_id, true ) ) {
 			return false;
 		}
 
